@@ -56,6 +56,14 @@ def monitor_oxygen(initial_o2: float) -> str:
 
 # Задача 4: Пошук максимального споживача (zip / dict)
 def find_max_power_system(systems: list, powers: list) -> tuple:
+    systems_dict = dict(zip(systems, powers))
+    power_max = powers[0]
+    system_max = systems[0]
+    for sys, pow in systems_dict.items():
+        if pow > power_max:
+            power_max = pow
+            system_max = sys
+    return(system_max, power_max)
     """
     Створює словник з систем та їх споживання за допомогою zip.
     Знаходить і повертає кортеж (назва_системи, макс_споживання).
