@@ -1,7 +1,7 @@
 """
 Лабораторна робота: Варіант 5
-Студент: [Прізвище, Ім'я]
-Група: [Назва групи]
+Студент: Рубцов Михаїл
+Група: EIP30
 """
 
 # Задача 1: Аварійна посадка БПЛА (складені умови)
@@ -18,7 +18,7 @@ def landing_decision(thrust: float, fuel: float, dist_to_runway: float) -> str:
     - інакше -> "Продовження місії"
     """
     ...
-print(landing_decision(2, 3, 4))
+
 # Задача 2: Класифікація подій "чорної скриньки" (match-case)
 def classify_blackbox_event(event: tuple) -> str:
     """
