@@ -21,13 +21,21 @@ def landing_decision(thrust: float, fuel: float, dist_to_runway: float) -> str:
 
 # Задача 2: Класифікація подій "чорної скриньки" (match-case)
 def classify_blackbox_event(event: tuple) -> str:
+    event_type = event[0]
+    priority = event[1]
+    payload = event[2]
+    match priority:
+        case 1:
+            return(f"Критична подія ({event_type}): {payload}")
+        case 2 | 3 as p:
+            return(f"Звичайна подія [пріоритет {p}] ({event_type}): {payload}")
     """
     Приймає (event_type, priority, payload).
     - priority == 1 -> "Критична подія ({type}): {payload}"
     - priority == 2 або 3 (з виразом as p) -> "Звичайна подія [пріоритет {p}] ({type}): {payload}"
     """
     ...
-
+    
 # Задача 3: Моніторинг рівнів кисню (while / continue / break)
 def monitor_oxygen(initial_o2: float) -> str:
     """
