@@ -6,13 +6,19 @@
 
 # Задача 1: Аварійна посадка БПЛА (складені умови)
 def landing_decision(thrust: float, fuel: float, dist_to_runway: float) -> str:
+    if fuel < 5 or thrust < 20:
+        return "Аварійна посадка в полі"
+    elif dist_to_runway <= 10:
+        return "Посадка на ЗПС"
+    else:
+        return "Продовження місії"
     """
     - fuel < 5 або thrust < 20 -> "Аварійна посадка в полі"
     - dist_to_runway <= 10 -> "Посадка на ЗПС"
     - інакше -> "Продовження місії"
     """
     ...
-
+print(landing_decision(2, 3, 4))
 # Задача 2: Класифікація подій "чорної скриньки" (match-case)
 def classify_blackbox_event(event: tuple) -> str:
     """
