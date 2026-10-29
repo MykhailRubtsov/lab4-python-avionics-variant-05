@@ -35,9 +35,18 @@ def classify_blackbox_event(event: tuple) -> str:
     - priority == 2 або 3 (з виразом as p) -> "Звичайна подія [пріоритет {p}] ({type}): {payload}"
     """
     ...
-    
+
 # Задача 3: Моніторинг рівнів кисню (while / continue / break)
 def monitor_oxygen(initial_o2: float) -> str:
+    o2 = initial_o2
+    while True:
+        o2 -= 2.0
+        if o2 <= 5:
+            break
+        elif o2 < 20:
+            print("Низький рівень кисню")
+            continue
+    return(f"Аварійна зупинка: O2 = {o2}%")
     """
     У циклі while зменшує рівень кисню на 2.0%.
     - o2 <= 5% -> перериває break і повертає "Аварійна зупинка: O2 = {o2}%"
